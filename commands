@@ -1,0 +1,9 @@
+.\.venv\Scripts\python app.py
+
+cd web
+cmd /c "npm run dev"
+
+Notes:
+1) position the capture button 
+2) rigistration with roll numbers section year brach
+3) oval camera capture blur like JNTUH
