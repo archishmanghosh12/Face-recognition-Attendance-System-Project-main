@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline Face Attendance</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Offline - Local - Private</p>
+          <h1>Face Attendance</h1>
+          <p class="sub">Capture attendance using your webcam. No internet required.</p>
+        </div>
+        <div class="status" id="status">Ready</div>
+      </header>
+
+      <section class="panel capture-panel">
+        <div class="card side-card register-card">
+          <h2>Register New Person</h2>
+          <p>Enter a name and capture one clear face image.</p>
+          <input id="nameInput" type="text" placeholder="Full name" />
+          <input id="rollInput" type="text" placeholder="Roll number" />
+          <input id="classInput" type="text" placeholder="Year" />
+          <input id="sectionInput" type="text" placeholder="Section" />
+          <input id="branchInput" type="text" placeholder="Branch" />
+          <button id="registerBtn">Capture & Register</button>
+        </div>
+
+        <div class="camera">
+          <div class="camera-frame">
+            <video id="video" autoplay playsinline></video>
+            <div class="camera-overlay" aria-hidden="true">
+              <div class="face-guide"></div>
+            </div>
+          </div>
+          <p class="guide-note">Align your face inside the oval</p>
+          <canvas id="canvas" width="640" height="480" hidden></canvas>
+        </div>
+
+        <div class="card side-card mark-card">
+          <h2>Mark Attendance</h2>
+          <p>Capture and match against registered faces.</p>
+          <button id="recognizeBtn">Capture & Recognize</button>
+          <div class="result" id="result">-</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="card wide">
+          <div class="card-head">
+            <h2>Attendance Log</h2>
+            <button id="refreshBtn">Refresh</button>
+          </div>
+          <div class="table">
+            <div class="row header">
+              <div>Name</div>
+              <div>Roll Number</div>
+              <div>Open</div>
+            </div>
+            <div id="rows"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
